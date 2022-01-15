@@ -8,6 +8,13 @@ class TelaMontarPerfil extends StatefulWidget {
 }
 
 class _TelaMontarPerfilState extends State<TelaMontarPerfil> {
+
+  bool isSelected = false;
+
+  @override
+  void initState() {
+    isSelected = false;
+  }
   
   
 
@@ -28,6 +35,8 @@ class _TelaMontarPerfilState extends State<TelaMontarPerfil> {
       Text('Romance', style: TextStyle(color: Colors.white),), Text('Suspense', style: TextStyle(color: Colors.white),),
     Text('Terror', style: TextStyle(color: Colors.white),), Text('Fanfic', style: TextStyle(color: Colors.white),),
       Text('Outros', style: TextStyle(color: Colors.white),)];
+
+    List generosEscolhidos = [];
     
     return Scaffold(
       appBar: AppBar(
@@ -94,16 +103,36 @@ class _TelaMontarPerfilState extends State<TelaMontarPerfil> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ElevatedButton(
-                            onPressed: (){},
+
+                        GestureDetector(
+                          onTap: (){
+                            setState(() {
+                              isSelected = !isSelected;
+                            });
+                          },
+                          child: ElevatedButton(
+                            onPressed: (){
+                              setState(() {
+                                isSelected = !isSelected;
+                                if(isSelected){
+                                  generosEscolhidos.add('Ação');
+                                }
+
+                                print(generosEscolhidos);
+                              });
+                            },
                             child: generos[0],
                             style: ButtonStyle(
-                                backgroundColor:MaterialStateProperty.all<Color>(
+                              backgroundColor:isSelected?MaterialStateProperty.all<Color>(
+                                  Colors.red):
+                              MaterialStateProperty.all<Color>(
                                   Color(0xFFBDA8FC)),
                               shape: MaterialStateProperty.all(RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(40.0))),
                             ),
+                          ),
                         ),
+
 
                         SizedBox(width: 5,),
 
