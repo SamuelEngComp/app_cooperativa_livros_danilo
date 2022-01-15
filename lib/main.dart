@@ -1,4 +1,5 @@
 import 'package:app_cooperativa_livros_danilo/tela_cadastro_user.dart';
+import 'package:app_cooperativa_livros_danilo/tela_montar_perfil.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
               'assets/imagens/logoSemFundo.png',
             ),
             splashTransition: SplashTransition.fadeTransition,
-            nextScreen: TelaLogin(),
+            nextScreen: TelaMontarPerfil(),
       ),);
   }
 }

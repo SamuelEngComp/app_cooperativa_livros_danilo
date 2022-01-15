@@ -9,6 +9,16 @@ class TelaCadastroUser extends StatefulWidget {
 }
 
 class _TelaCadastroUserState extends State<TelaCadastroUser> {
+  bool isChecked = false;
+  bool _visiblePassword =  false;
+  bool _visibleConfirmPassword = false;
+
+  @override
+  void initState() {
+    _visiblePassword = false;
+    _visibleConfirmPassword = false;
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -53,6 +63,7 @@ class _TelaCadastroUserState extends State<TelaCadastroUser> {
                           //inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),],
                           decoration: InputDecoration(
                             hintText: 'Nome de usuário',
+                            suffixIcon: Icon(Icons.people),
                             contentPadding: EdgeInsets.all(8.0),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15.0),
@@ -78,7 +89,8 @@ class _TelaCadastroUserState extends State<TelaCadastroUser> {
                         SizedBox(height: 20,),
 
                         TextFormField(
-                          keyboardType: TextInputType.emailAddress,
+                          keyboardType: TextInputType.visiblePassword,
+                          obscureText: !_visiblePassword,
                           //inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),],
                           decoration: InputDecoration(
                             hintText: 'Senha',
@@ -86,37 +98,68 @@ class _TelaCadastroUserState extends State<TelaCadastroUser> {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15.0),
                             ),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _visiblePassword? Icons.visibility: Icons.visibility_off
+                              ),
+                              onPressed: (){
+                                setState(() {
+                                  _visiblePassword = !_visiblePassword;
+                                });
+                              },
+                            ),
                           ),
                         ),
 
                         SizedBox(height: 20,),
 
                         TextFormField(
-                          keyboardType: TextInputType.emailAddress,
+                          keyboardType: TextInputType.visiblePassword,
                           //inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),],
+                          obscureText: !_visibleConfirmPassword,
                           decoration: InputDecoration(
                             hintText: 'Confirmação de senha',
                             contentPadding: EdgeInsets.all(8.0),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15.0),
                             ),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                  _visibleConfirmPassword? Icons.visibility: Icons.visibility_off
+                              ),
+                              onPressed: (){
+                                setState(() {
+                                  _visibleConfirmPassword = !_visibleConfirmPassword;
+                                });
+                              },
+                            ),
                           ),
                         ),
 
                         SizedBox(height: 20,),
 
-                        Row(
+                        Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Checkbox(
-                                value: true,
-                                onChanged: (valor){
-                                  setState(() {
-                                    valor = false;
-                                  });
-                                },
+
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Checkbox(
+                                  checkColor: Colors.white,
+                                  value: isChecked,
+                                  onChanged: (bool? value){
+                                    setState(() {
+                                      isChecked = value!;
+                                    });
+                                  },
+                                ),
+                                Text('Eu concordo com os termos de uso '),
+                              ],
+
                             ),
-                            Text('Eu concordo com os termos de uso '),
+
+
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.push(context,

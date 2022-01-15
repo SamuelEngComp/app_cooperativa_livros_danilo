@@ -10,12 +10,22 @@ class TelaLogin extends StatefulWidget {
 }
 
 class _TelaLoginState extends State<TelaLogin> {
+
+  bool _visiblePassword =  false;
+
+  @override
+  void initState() {
+    _visiblePassword = false;
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     double largura = MediaQuery.of(context).size.width;
     double altura = MediaQuery.of(context).size.height;
 
-    //SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+
 
     return Scaffold(
       body: Container(
@@ -67,6 +77,7 @@ class _TelaLoginState extends State<TelaLogin> {
                           keyboardType: TextInputType.emailAddress,
                           //inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),],
                           decoration: InputDecoration(
+                            suffixIcon: Icon(Icons.email),
                             hintText: 'E-mail',
                             contentPadding: EdgeInsets.all(8.0),
                             border: OutlineInputBorder(
@@ -79,12 +90,22 @@ class _TelaLoginState extends State<TelaLogin> {
                         ),
                         TextFormField(
                           keyboardType: TextInputType.visiblePassword,
-                          obscureText: true,
+                          obscureText: !_visiblePassword,
                           decoration: InputDecoration(
                             hintText: 'Senha',
                             contentPadding: EdgeInsets.all(8.0),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                  _visiblePassword? Icons.visibility: Icons.visibility_off
+                              ),
+                              onPressed: (){
+                                setState(() {
+                                  _visiblePassword = !_visiblePassword;
+                                });
+                              },
                             ),
                           ),
                         ),
