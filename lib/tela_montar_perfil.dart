@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'filtros_perfil.dart';
+
 class TelaMontarPerfil extends StatefulWidget {
 
 
@@ -10,10 +12,12 @@ class TelaMontarPerfil extends StatefulWidget {
 class _TelaMontarPerfilState extends State<TelaMontarPerfil> {
 
   bool isSelected = false;
+  int selectedIndex = 0;
 
   @override
   void initState() {
     isSelected = false;
+    selectedIndex = 0;
   }
   
   
@@ -36,8 +40,7 @@ class _TelaMontarPerfilState extends State<TelaMontarPerfil> {
     Text('Terror', style: TextStyle(color: Colors.white),), Text('Fanfic', style: TextStyle(color: Colors.white),),
       Text('Outros', style: TextStyle(color: Colors.white),)];
 
-    List generosEscolhidos = [];
-    
+
     return Scaffold(
       appBar: AppBar(
           title:Image.asset('assets/imagens/iconeLivro.png'),
@@ -59,12 +62,10 @@ class _TelaMontarPerfilState extends State<TelaMontarPerfil> {
       body: Container(
         width: largura,
         height: altura,
-        child: Column(
+        child: ListView(
+          //mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Container(
-                width: largura * 0.9,
-                child: Row(
-                  //mainAxisAlignment: MainAxisAlignment.start,
+                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
 
@@ -92,362 +93,67 @@ class _TelaMontarPerfilState extends State<TelaMontarPerfil> {
                     ),
                   ],
                 ),
-                ),
-
-
-              Container(
-                height: altura/2,
-                width: largura * 0.9,
-                child: ListView(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-
-                        GestureDetector(
-                          onTap: (){
-                            setState(() {
-                              isSelected = !isSelected;
-                            });
-                          },
-                          child: ElevatedButton(
-                            onPressed: (){
-                              setState(() {
-                                isSelected = !isSelected;
-                                if(isSelected){
-                                  generosEscolhidos.add('Ação');
-                                }
-
-                                print(generosEscolhidos);
-                              });
-                            },
-                            child: generos[0],
-                            style: ButtonStyle(
-                              backgroundColor:isSelected?MaterialStateProperty.all<Color>(
-                                  Colors.red):
-                              MaterialStateProperty.all<Color>(
-                                  Color(0xFFBDA8FC)),
-                              shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40.0))),
-                            ),
-                          ),
-                        ),
-
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[1],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[2],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-
-                              shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[3],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-
-                              shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                      ],
-                    ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[4],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[5],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[6],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[7],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                      ],
-                    ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[8],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[9],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[10],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                      ],
-                    ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[11],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[12],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[13],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-
-                      ],
-                    ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[14],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[15],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[16],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                      ],
-                    ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[17],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[18],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[19],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                        SizedBox(width: 5,),
-
-                        ElevatedButton(
-                          onPressed: (){},
-                          child: generos[19],
-                          style: ButtonStyle(
-                            backgroundColor:MaterialStateProperty.all<Color>(
-                                Color(0xFFBDA8FC)),
-
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.0))),
-                          ),
-                        ),
-
-                      ],
-                    ),
-                  ],
-
-
-                ),
-
-                  /*
-                  GridView.count(
-                    primary: false,
-                    padding: const EdgeInsets.all(15),
-                    crossAxisSpacing: 2,
-                    mainAxisSpacing: 2,
-                    crossAxisCount: 4,
-                    children: generos,
-                  ),*/
-              ),
 
 
 
-
+        Container(
+          height: altura * 0.7,
+          width: largura * 0.8,
+          child: FiltroPerfil(),
+        ),
             ],
           ),
         ),
+      bottomNavigationBar: BottomNavigationBar(
+
+        currentIndex: selectedIndex,
+        selectedItemColor: Colors.black,
+        onTap: (index){
+          setState(() {
+            selectedIndex = index;
+            print('SelectedIndex: $selectedIndex');
+            print('Index: $index');
+          });
+        },
+
+        //type: BottomNavigationBarType.fixed,
+        //showSelectedLabels: true,
+        //backgroundColor: Color(0xFFD097FC),
+        iconSize: 30,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+            backgroundColor: Color(0xFFD097FC),
+            tooltip: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Perfil',
+            backgroundColor: Color(0xFFD097FC),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu_book_sharp),
+            label: 'Galeria',
+            backgroundColor: Color(0xFFD097FC),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.wifi),
+            label: 'Web',
+            backgroundColor: Color(0xFFD097FC),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.comment),
+            label: 'Chat',
+            backgroundColor: Color(0xFFD097FC),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart_outlined),
+            label: 'Shop',
+            backgroundColor: Color(0xFFD097FC),
+          ),
+        ],
+      ),
     );
   }
 }
