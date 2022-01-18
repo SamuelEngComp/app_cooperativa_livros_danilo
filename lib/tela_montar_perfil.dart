@@ -1,5 +1,7 @@
+import 'package:app_cooperativa_livros_danilo/chips_filtros.dart';
 import 'package:flutter/material.dart';
 
+import 'chips_usuarios.dart';
 import 'filtros_perfil.dart';
 
 class TelaMontarPerfil extends StatefulWidget {
@@ -99,7 +101,9 @@ class _TelaMontarPerfilState extends State<TelaMontarPerfil> {
         Container(
           height: altura * 0.7,
           width: largura * 0.8,
-          child: FiltroPerfil(),
+          //child: FiltroPerfil(),
+          //child: ChipsFiltros(),
+          child: ChipsUsuarios(),
         ),
             ],
           ),
