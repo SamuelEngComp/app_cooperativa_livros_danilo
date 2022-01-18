@@ -3,7 +3,9 @@ import 'package:app_cooperativa_livros_danilo/tela_montar_perfil.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
+import 'chips_usuarios.dart';
 import 'tela_login.dart';
+import 'tela_montar_perfil_users.dart';
 
 void main() {
   runApp(MyApp());
@@ -51,7 +53,8 @@ class MyApp extends StatelessWidget {
               'assets/imagens/logoSemFundo.png',
             ),
             splashTransition: SplashTransition.fadeTransition,
-            nextScreen: TelaMontarPerfil(),
+            //nextScreen: TelaMontarPerfil(),TelaMontarPerfilUsers
+          nextScreen: TelaMontarPerfilUsers(),
       ),);
   }
 }
