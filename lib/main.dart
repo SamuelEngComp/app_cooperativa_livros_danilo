@@ -53,8 +53,8 @@ class MyApp extends StatelessWidget {
               'assets/imagens/logoSemFundo.png',
             ),
             splashTransition: SplashTransition.fadeTransition,
-            //nextScreen: TelaMontarPerfil(),TelaMontarPerfilUsers
-          nextScreen: TelaMontarPerfilUsers(),
+
+          nextScreen:TelaLogin(),
       ),);
   }
 }

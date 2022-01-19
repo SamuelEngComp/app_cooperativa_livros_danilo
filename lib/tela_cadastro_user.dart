@@ -60,7 +60,6 @@ class _TelaCadastroUserState extends State<TelaCadastroUser> {
                       children: [
                         TextFormField(
                           keyboardType: TextInputType.emailAddress,
-                          //inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),],
                           decoration: InputDecoration(
                             hintText: 'Nome de usuário',
                             suffixIcon: Icon(Icons.people),
@@ -75,7 +74,6 @@ class _TelaCadastroUserState extends State<TelaCadastroUser> {
 
                         TextFormField(
                           keyboardType: TextInputType.emailAddress,
-                          //inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),],
                           decoration: InputDecoration(
                             suffixIcon: Icon(Icons.email),
                             hintText: 'E-mail',
@@ -91,7 +89,6 @@ class _TelaCadastroUserState extends State<TelaCadastroUser> {
                         TextFormField(
                           keyboardType: TextInputType.visiblePassword,
                           obscureText: !_visiblePassword,
-                          //inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),],
                           decoration: InputDecoration(
                             hintText: 'Senha',
                             contentPadding: EdgeInsets.all(8.0),
@@ -115,7 +112,6 @@ class _TelaCadastroUserState extends State<TelaCadastroUser> {
 
                         TextFormField(
                           keyboardType: TextInputType.visiblePassword,
-                          //inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),],
                           obscureText: !_visibleConfirmPassword,
                           decoration: InputDecoration(
                             hintText: 'Confirmação de senha',

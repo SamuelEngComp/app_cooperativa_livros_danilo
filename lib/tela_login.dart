@@ -1,8 +1,8 @@
 
 
 import 'package:app_cooperativa_livros_danilo/tela_cadastro_user.dart';
+import 'package:app_cooperativa_livros_danilo/tela_montar_perfil.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter/services.dart';
 
 class TelaLogin extends StatefulWidget {
   @override
@@ -18,24 +18,19 @@ class _TelaLoginState extends State<TelaLogin> {
     _visiblePassword = false;
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     double largura = MediaQuery.of(context).size.width;
     double altura = MediaQuery.of(context).size.height;
-
-
 
     return Scaffold(
       body: Container(
         width: largura,
         height: altura,
         child: ListView(
-          //crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              width: largura*0.8,
+              width: largura * 0.8,
               child: Column(
                 children: [
                   const SizedBox(
@@ -75,11 +70,10 @@ class _TelaLoginState extends State<TelaLogin> {
                       children: [
                         TextFormField(
                           keyboardType: TextInputType.emailAddress,
-                          //inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),],
                           decoration: InputDecoration(
-                            suffixIcon: Icon(Icons.email),
+                            suffixIcon: const Icon(Icons.email),
                             hintText: 'E-mail',
-                            contentPadding: EdgeInsets.all(8.0),
+                            contentPadding: const EdgeInsets.all(8.0),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15.0),
                             ),
@@ -93,7 +87,7 @@ class _TelaLoginState extends State<TelaLogin> {
                           obscureText: !_visiblePassword,
                           decoration: InputDecoration(
                             hintText: 'Senha',
-                            contentPadding: EdgeInsets.all(8.0),
+                            contentPadding: const EdgeInsets.all(8.0),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15.0),
                             ),
@@ -119,8 +113,8 @@ class _TelaLoginState extends State<TelaLogin> {
                             children: [
                               ElevatedButton(
                                 onPressed: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) => TelaCadastroUser()));
+                                  Navigator.pushAndRemoveUntil(context,
+                                      MaterialPageRoute(builder: (context) => TelaMontarPerfil()), (route) => false);
                                 },
                                 child: const Padding(
                                   padding: EdgeInsets.fromLTRB(5, 12, 5, 12),
@@ -134,7 +128,7 @@ class _TelaLoginState extends State<TelaLogin> {
                                 ),
                                 style: ButtonStyle(
                                   backgroundColor: MaterialStateProperty.all<Color>(
-                                      Color(0xFFBDA8FC)),
+                                      const Color(0xFFBDA8FC)),
 
                                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10.0))),
@@ -148,20 +142,18 @@ class _TelaLoginState extends State<TelaLogin> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              SizedBox(height: 50,),
-                              Text('Você é novo aqui? '),
+                              const SizedBox(height: 50,),
+                              const Text('Você é novo aqui? '),
 
                               TextButton(
                                   onPressed: (){
-                                    Navigator.push(context, 
-                                    MaterialPageRoute(builder: (context) => TelaCadastroUser()));
+                                    Navigator.pushAndRemoveUntil(context,
+                                        MaterialPageRoute(builder: (context) => TelaCadastroUser()), (route) => false);
                                   },
-                                  child: Text('Crie sua conta',
+                                  child: const Text('Crie sua conta',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                     color: Colors.black),),),
-
-
                             ],
                           ),
                         ),
@@ -171,10 +163,6 @@ class _TelaLoginState extends State<TelaLogin> {
                 ],
               ),
             ),
-
-
-
-
           ],
         ),
       ),

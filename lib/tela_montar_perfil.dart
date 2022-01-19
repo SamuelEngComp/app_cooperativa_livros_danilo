@@ -1,4 +1,5 @@
 import 'package:app_cooperativa_livros_danilo/chips_filtros.dart';
+import 'package:app_cooperativa_livros_danilo/tela_montar_perfil_users.dart';
 import 'package:flutter/material.dart';
 
 import 'chips_usuarios.dart';
@@ -30,18 +31,6 @@ class _TelaMontarPerfilState extends State<TelaMontarPerfil> {
     double largura = MediaQuery.of(context).size.width;
     double altura = MediaQuery.of(context).size.height;
 
-    List<Widget> generos = [Text('Ação', style: TextStyle(color: Colors.white),),
-      Text('Aventura', style: TextStyle(color: Colors.white),), Text('Clássicos', style: TextStyle(color: Colors.white),),
-      Text('Comédia', style: TextStyle(color: Colors.white),), Text('Contos', style: TextStyle(color: Colors.white),),
-    Text('Drama', style: TextStyle(color: Colors.white),), Text('Espiritual', style: TextStyle(color: Colors.white),),
-      Text('Fantasia', style: TextStyle(color: Colors.white),), Text('Ficção Cientifica', style: TextStyle(color: Colors.white),),
-      Text('Ficção histórica', style: TextStyle(color: Colors.white),), Text('Humor', style: TextStyle(color: Colors.white),),
-      Text('Mistério', style: TextStyle(color: Colors.white),), Text('Não ficção', style: TextStyle(color: Colors.white),),
-      Text('Paranormal', style: TextStyle(color: Colors.white),), Text('Poesia', style: TextStyle(color: Colors.white),),
-      Text('Romance', style: TextStyle(color: Colors.white),), Text('Suspense', style: TextStyle(color: Colors.white),),
-    Text('Terror', style: TextStyle(color: Colors.white),), Text('Fanfic', style: TextStyle(color: Colors.white),),
-      Text('Outros', style: TextStyle(color: Colors.white),)];
-
 
     return Scaffold(
       appBar: AppBar(
@@ -50,13 +39,15 @@ class _TelaMontarPerfilState extends State<TelaMontarPerfil> {
           actions: [
             Padding(padding: EdgeInsets.all(8),
               child: IconButton(
-                onPressed: (){},
+                onPressed: (){
+                    Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => TelaMontarPerfilUsers()));
+                },
                 icon: Icon(Icons.save, color: Colors.white,),),
             ),
-            Padding(padding: EdgeInsets.all(8),
-              child: Icon(Icons.search, color: Colors.white,),
-            ),
-
+            //Padding(padding: EdgeInsets.all(8),
+            //  child: Icon(Icons.search, color: Colors.white,),
+           // ),
 
           ],
           backgroundColor: Color(0xFFD097FC),
@@ -65,7 +56,6 @@ class _TelaMontarPerfilState extends State<TelaMontarPerfil> {
         width: largura,
         height: altura,
         child: ListView(
-          //mainAxisAlignment: MainAxisAlignment.start,
             children: [
                  Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,63 +91,11 @@ class _TelaMontarPerfilState extends State<TelaMontarPerfil> {
         Container(
           height: altura * 0.7,
           width: largura * 0.8,
-          //child: FiltroPerfil(),
-          //child: ChipsFiltros(),
-          child: ChipsUsuarios(),
+          child: ChipsFiltros(),
         ),
             ],
           ),
         ),
-      bottomNavigationBar: BottomNavigationBar(
-
-        currentIndex: selectedIndex,
-        selectedItemColor: Colors.black,
-        onTap: (index){
-          setState(() {
-            selectedIndex = index;
-            print('SelectedIndex: $selectedIndex');
-            print('Index: $index');
-          });
-        },
-
-        //type: BottomNavigationBarType.fixed,
-        //showSelectedLabels: true,
-        //backgroundColor: Color(0xFFD097FC),
-        iconSize: 30,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Color(0xFFD097FC),
-            tooltip: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Perfil',
-            backgroundColor: Color(0xFFD097FC),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book_sharp),
-            label: 'Galeria',
-            backgroundColor: Color(0xFFD097FC),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.wifi),
-            label: 'Web',
-            backgroundColor: Color(0xFFD097FC),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.comment),
-            label: 'Chat',
-            backgroundColor: Color(0xFFD097FC),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
-            label: 'Shop',
-            backgroundColor: Color(0xFFD097FC),
-          ),
-        ],
-      ),
     );
   }
 }

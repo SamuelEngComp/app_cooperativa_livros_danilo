@@ -92,8 +92,12 @@ class _ChipsUsuariosState extends State<ChipsUsuarios> {
                   bottom: 0,
                   top: 50,
                   child: IconButton(
-                    onPressed: (){},
-                    icon: Icon(Icons.add),
+                    onPressed: (){
+                      setState(() {
+                        usuarios[i].selecionado = !selected;
+                      });
+                    },
+                    icon: Icon(usuarios[i].selecionado ?Icons.check : Icons.add),
                   ),
                 ),
 
