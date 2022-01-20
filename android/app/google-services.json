@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "454488351714",
+    "project_id": "app-cooperativa-livros-danilo",
+    "storage_bucket": "app-cooperativa-livros-danilo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454488351714:android:1a5354a806879e58aacfbb",
+        "android_client_info": {
+          "package_name": "com.example.app_cooperativa_livros_danilo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454488351714-d2e86oqmot48sdogmvpjh987f9v4s99n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvK2UMbL9KxsmMqCkNFu6E0D9Hbdk7o_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454488351714-d2e86oqmot48sdogmvpjh987f9v4s99n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

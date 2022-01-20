@@ -1,14 +1,30 @@
-import 'package:app_cooperativa_livros_danilo/tela_cadastro_user.dart';
-import 'package:app_cooperativa_livros_danilo/tela_montar_perfil.dart';
+
+import 'package:app_cooperativa_livros_danilo/service/auth_service.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:provider/provider.dart';
 
-import 'chips_usuarios.dart';
 import 'tela_login.dart';
-import 'tela_montar_perfil_users.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async{
+
+
+  print('aqui');
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  runApp(
+    MultiProvider(
+      providers:[
+        ChangeNotifierProvider(create: (context) => AuthService()),
+
+      ],
+      child: MyApp(),
+    ),
+
+
+  );
 }
 
 
@@ -45,8 +61,6 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: colorCustom,
       ),
-      //home: TelaLogin(),
-       // home: TelaCadastroUser(),
       home: AnimatedSplashScreen(
             splashIconSize: 300,
             splash: Image.asset(

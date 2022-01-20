@@ -46,15 +46,15 @@ class _PaginaHomeState extends State<PaginaHome> {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(
-                color: Color(0xFFD097FC),
+                //color: Color(0xFFD097FC),
                 image: DecorationImage(
                   image: AssetImage('assets/imagens/logoSemFundo.png'),
-                  fit: BoxFit.fill,
+                  fit: BoxFit.none,
                 ),
               ),
-              child: Text('NAVEGAR'),
+              child: const Text('NAVEGAR'),
             ),
             ListTile(
               title: const Text('AÇÃO'),
@@ -154,6 +154,14 @@ class _PaginaHomeState extends State<PaginaHome> {
                 // ...
               },
             ),
+            Divider(
+              height: 20,
+              color: Color(0xFFD097FC),
+            ),
+            ListTile(
+              title: Text('App em desenvolvimento'),
+              subtitle: Text('...'),
+            ),
           ],
         ),
       ),
@@ -170,7 +178,7 @@ class _PaginaHomeState extends State<PaginaHome> {
         elevation: 5,
         top: -25,
         curveSize: 80,
-        backgroundColor: Color(0xFFD097FC),
+        backgroundColor: const Color(0xFFD097FC),
         initialActiveIndex: selectedIndex,
         onTap: (index){
           setState(() {
