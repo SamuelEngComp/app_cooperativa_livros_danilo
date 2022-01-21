@@ -1,6 +1,7 @@
 import 'package:app_cooperativa_livros_danilo/tela_chat.dart';
 import 'package:app_cooperativa_livros_danilo/tela_galeria.dart';
 import 'package:app_cooperativa_livros_danilo/tela_home_inicial.dart';
+import 'package:app_cooperativa_livros_danilo/tela_login.dart';
 import 'package:app_cooperativa_livros_danilo/tela_perfil.dart';
 import 'package:app_cooperativa_livros_danilo/tela_shop.dart';
 import 'package:app_cooperativa_livros_danilo/tela_web.dart';
@@ -46,15 +47,21 @@ class _PaginaHomeState extends State<PaginaHome> {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                //color: Color(0xFFD097FC),
-                image: DecorationImage(
-                  image: AssetImage('assets/imagens/logoSemFundo.png'),
-                  fit: BoxFit.none,
+            DrawerHeader(
+              child: Center(
+                child: Row(
+                  children: [
+                    Text('NAVEGAR'),
+                    SizedBox(width: 30,),
+                    Container(
+                      child: Image.asset('assets/imagens/logoSemFundo.png',
+                      width: 150,height: 150,),
+                    ),
+                  ],
                 ),
               ),
-              child: const Text('NAVEGAR'),
+
+
             ),
             ListTile(
               title: const Text('AÇÃO'),
@@ -154,13 +161,19 @@ class _PaginaHomeState extends State<PaginaHome> {
                 // ...
               },
             ),
-            Divider(
+            const Divider(
               height: 20,
               color: Color(0xFFD097FC),
             ),
             ListTile(
-              title: Text('App em desenvolvimento'),
-              subtitle: Text('...'),
+              title: const Text('SAIR'),
+              leading: IconButton(
+                icon: Icon(Icons.logout),
+                  onPressed: (){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => TelaLogin()));
+                  },
+              ),
             ),
           ],
         ),

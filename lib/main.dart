@@ -9,19 +9,19 @@ import 'tela_login.dart';
 
 void main() async{
 
-
+/**
   print('aqui');
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+**/
+  runApp(MyApp(),
+    //MultiProvider(
+    //  providers:[
+    //    ChangeNotifierProvider(create: (context) => AuthService()),
 
-  runApp(
-    MultiProvider(
-      providers:[
-        ChangeNotifierProvider(create: (context) => AuthService()),
-
-      ],
-      child: MyApp(),
-    ),
+    //  ],
+    //  child: MyApp(),
+    //),
 
 
   );
