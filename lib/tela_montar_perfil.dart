@@ -2,9 +2,6 @@ import 'package:app_cooperativa_livros_danilo/chips_filtros.dart';
 import 'package:app_cooperativa_livros_danilo/tela_montar_perfil_users.dart';
 import 'package:flutter/material.dart';
 
-import 'chips_usuarios.dart';
-import 'filtros_perfil.dart';
-
 class TelaMontarPerfil extends StatefulWidget {
 
 

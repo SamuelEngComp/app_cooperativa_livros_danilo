@@ -1,5 +1,6 @@
 
 
+import 'package:app_cooperativa_livros_danilo/dados/dummy_dados.dart';
 import 'package:app_cooperativa_livros_danilo/models/usuarios_perfil.dart';
 import 'package:flutter/material.dart';
 
@@ -12,26 +13,7 @@ class ChipsUsuarios extends StatefulWidget {
 
 class _ChipsUsuariosState extends State<ChipsUsuarios> {
 
-  List<UsuariosPerfil> usuarios = [
-    UsuariosPerfil(nome: 'Angelina Jolie', imagemAvatar: 'assets/imagens/angelinaJolie.jpeg',selecionado:  false),
-    UsuariosPerfil(nome: 'Bruxo Mito', imagemAvatar: 'assets/imagens/bruxo.jpeg',selecionado:  false),
-    UsuariosPerfil(nome: 'Cameron Diaz', imagemAvatar: 'assets/imagens/cameronDiaz.jpeg',selecionado:  false),
-    UsuariosPerfil(nome: 'CR7 Ronaldo', imagemAvatar: 'assets/imagens/cr7.jpeg',selecionado:  false),
-    UsuariosPerfil(nome: 'Mano Brown', imagemAvatar: 'assets/imagens/mano.jpeg',selecionado:  false),
-    UsuariosPerfil(nome: 'Marcelo Latera', imagemAvatar: 'assets/imagens/marcelo.jpeg',selecionado:  false),
-    UsuariosPerfil(nome: 'Mariana Ximenes', imagemAvatar: 'assets/imagens/marianaXimenes.jpeg',selecionado:  false),
-    UsuariosPerfil(nome: 'Lionel Messi', imagemAvatar: 'assets/imagens/messi.jpeg',selecionado:  false),
-    UsuariosPerfil(nome: 'Neymar Jr', imagemAvatar: 'assets/imagens/neymar.png',selecionado:  false),
-
-    UsuariosPerfil(nome: 'Bozo Peste', imagemAvatar: 'assets/imagens/bozo.jpeg',selecionado:  false),
-    UsuariosPerfil(nome: 'Dilmãe Dilma', imagemAvatar: 'assets/imagens/dilmae.jpeg',selecionado:  false),
-    UsuariosPerfil(nome: 'Kakaroto Goku', imagemAvatar: 'assets/imagens/goku.jpg',selecionado:  false),
-    UsuariosPerfil(nome: 'Lula Livre', imagemAvatar: 'assets/imagens/lula.jpeg',selecionado:  false),
-    UsuariosPerfil(nome: 'Moro Dallanol', imagemAvatar: 'assets/imagens/moro.jpg',selecionado:  false),
-    UsuariosPerfil(nome: 'Vegeta Verme', imagemAvatar: 'assets/imagens/vegeta.jpeg',selecionado:  false),
-  ];
-
-  bool selected = false;
+  List<UsuariosPerfil> usuarios = USUARIOS;
 
 
   @override
@@ -76,8 +58,8 @@ class _ChipsUsuariosState extends State<ChipsUsuarios> {
                   top: 60,
                     child: ClipOval(
                       child: Container(
-                        width: 25,
-                        height: 25,
+                        width: 20,
+                        height: 20,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(45),
@@ -91,13 +73,20 @@ class _ChipsUsuariosState extends State<ChipsUsuarios> {
                   left: 50,
                   bottom: 0,
                   top: 50,
-                  child: IconButton(
-                    onPressed: (){
+                  child: FilterChip(
+                    padding: EdgeInsets.only(right: 10),
+                    backgroundColor: Colors.white,
+                    selectedColor: Colors.white,
+                    showCheckmark: false,
+
+                    selected: usuarios[i].selecionado,
+                    onSelected: (bool value) {
                       setState(() {
-                        usuarios[i].selecionado = !selected;
+                        usuarios[i].selecionado = value;
                       });
                     },
-                    icon: Icon(usuarios[i].selecionado ?Icons.check : Icons.add),
+                    label: Icon(usuarios[i].selecionado ? Icons.check : Icons.add),
+
                   ),
                 ),
 

@@ -1,6 +1,6 @@
 
 
-import 'package:app_cooperativa_livros_danilo/tela_cadastro_user.dart';
+import 'package:app_cooperativa_livros_danilo/views/tela_cadastro_user.dart';
 import 'package:app_cooperativa_livros_danilo/tela_montar_perfil.dart';
 import 'package:flutter/material.dart';
 

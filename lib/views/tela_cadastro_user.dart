@@ -1,4 +1,4 @@
-import 'package:app_cooperativa_livros_danilo/tela_login.dart';
+import 'package:app_cooperativa_livros_danilo/views/tela_login.dart';
 import 'package:flutter/material.dart';
 
 class TelaCadastroUser extends StatefulWidget {
@@ -29,9 +29,6 @@ class _TelaCadastroUserState extends State<TelaCadastroUser> {
       appBar: AppBar(
         title:Image.asset('assets/imagens/iconeLivro.png'),
         centerTitle: true,
-        actions: [
-          Icon(Icons.search, color: Colors.white,),
-        ],
         backgroundColor: Color(0xFFD097FC),
       ),
       body: Container(

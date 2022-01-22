@@ -1,8 +1,8 @@
-import 'package:app_cooperativa_livros_danilo/componentes/barra_inferior_navegacao.dart';
+
 import 'package:app_cooperativa_livros_danilo/pagina_home.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+
 import 'package:flutter/widgets.dart';
 
 import 'chips_usuarios.dart';
@@ -46,9 +46,6 @@ class _TelaMontarPerfilUsersState extends State<TelaMontarPerfilUsers> {
               },
               icon: Icon(Icons.save, color: Colors.white,),),
           ),
-         // Padding(padding: EdgeInsets.all(8),
-         //   child: Icon(Icons.search, color: Colors.white,),
-         // ),
         ],
         backgroundColor: Color(0xFFD097FC),
       ),
