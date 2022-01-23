@@ -15,124 +15,62 @@ class TelaHomeInicial extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-        height: altura,
-        margin: EdgeInsets.symmetric(vertical: 10),
-        child: ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-            Container(
-              width: 120,
-              child: Card(
-                child: Wrap(
-                  children: [
-                    Image.asset(livros[0].urlImage, width: 100, height: 200,),
-                    ListTile(
-                      title: Text(livros[0].genero),
-                    ),
-                  ],
-                ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('SUA BIBLIOTECA'),
+              SizedBox(
+                height: 150,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: livros.length,
+                    itemBuilder: (context, index){
+                      return Container(
+                        margin: EdgeInsets.all(5),
+                        child: Card(
+                          child: Image.asset(livros[index].urlImage, fit: BoxFit.cover,),
+                          elevation: 10,
+                        ),
 
-              ),
-            ),
-            Container(
-              width: 120,
-              child: Card(
-                child: Wrap(
-                  children: [
-                    Image.asset(livros[0].urlImage, width: 100, height: 200,),
-                    ListTile(
-                      title: Text(livros[0].genero),
-                    ),
-                  ],
-                ),
 
+                      );
+                    }),
               ),
-            ),
-            Container(
-              width: 120,
-              child: Card(
-                child: Wrap(
-                  children: [
-                    Image.asset(livros[0].urlImage, width: 100, height: 200,),
-                    ListTile(
-                      title: Text(livros[0].genero),
-                    ),
-                  ],
-                ),
 
+              Text('RECOMENDAÇÕES'),
+              SizedBox(
+                height: 200,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: livros.length,
+                    itemBuilder: (context, index){
+                      return Container(
+                        width: 100,
+                        height: 100,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset(livros[index].urlImage),
+                      );
+                    }),
               ),
-            ),
-            Container(
-              width: 120,
-              child: Card(
-                child: Wrap(
-                  children: [
-                    Image.asset(livros[0].urlImage, width: 100, height: 200,),
-                    ListTile(
-                      title: Text(livros[0].genero),
-                    ),
-                  ],
-                ),
 
+              Text('O QUE OS SEUS AMIGOS ESTÃO LENDO'),
+              SizedBox(
+                height: 200,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: livros.length,
+                    itemBuilder: (context, index){
+                      return Container(
+                        width: 100,
+                        height: 100,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset(livros[index].urlImage),
+                      );
+                    }),
               ),
-            ),
-            Container(
-              width: 120,
-              child: Card(
-                child: Wrap(
-                  children: [
-                    Image.asset(livros[0].urlImage, width: 100, height: 200,),
-                    ListTile(
-                      title: Text(livros[0].genero),
-                    ),
-                  ],
-                ),
-
-              ),
-            ),
-            Container(
-              width: 120,
-              child: Card(
-                child: Wrap(
-                  children: [
-                    Image.asset(livros[0].urlImage, width: 100, height: 200,),
-                    ListTile(
-                      title: Text(livros[0].genero),
-                    ),
-                  ],
-                ),
-
-              ),
-            ),
-            Container(
-              width: 120,
-              child: Card(
-                child: Wrap(
-                  children: [
-                    Image.asset(livros[0].urlImage, width: 100, height: 200,),
-                    ListTile(
-                      title: Text(livros[0].genero),
-                    ),
-                  ],
-                ),
-
-              ),
-            ),
-            Container(
-              width: 120,
-              child: Card(
-                child: Wrap(
-                  children: [
-                    Image.asset(livros[0].urlImage, width: 100, height: 200,),
-                    ListTile(
-                      title: Text(livros[0].genero),
-                    ),
-                  ],
-                ),
-
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
 
