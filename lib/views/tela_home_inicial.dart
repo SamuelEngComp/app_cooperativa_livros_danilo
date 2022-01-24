@@ -8,9 +8,6 @@ class TelaHomeInicial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    double altura = MediaQuery.of(context).size.height;
-    double largura = MediaQuery.of(context).size.width;
-
     List<Livro> livros = LIVROS;
 
     return Scaffold(
@@ -19,53 +16,98 @@ class TelaHomeInicial extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('SUA BIBLIOTECA'),
+              const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text('SUA BIBLIOTECA',
+                  style: TextStyle(fontWeight: FontWeight.bold),),
+              ),
               SizedBox(
                 height: 150,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: livros.length,
                     itemBuilder: (context, index){
-                      return Container(
-                        margin: EdgeInsets.all(5),
-                        child: Card(
-                          child: Image.asset(livros[index].urlImage, fit: BoxFit.cover,),
-                          elevation: 10,
-                        ),
-
-
+                      return Row(
+                        children: [
+                          SizedBox(
+                            height: 160,
+                            width: 100,
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Image.asset(livros[index].urlImage, height: 100,),
+                                  Text(livros[index].genero, overflow: TextOverflow.visible, textAlign: TextAlign.center,),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       );
                     }),
               ),
-
-              Text('RECOMENDAÇÕES'),
+              const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text('RECOMENDAÇÕES',
+                  style: TextStyle(fontWeight: FontWeight.bold),),
+              ),
               SizedBox(
-                height: 200,
+                height: 150,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: livros.length,
                     itemBuilder: (context, index){
-                      return Container(
-                        width: 100,
-                        height: 100,
-                        margin: EdgeInsets.all(10),
-                        child: Image.asset(livros[index].urlImage),
+                      return Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 160,
+                            width: 100,
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Image.asset(livros[index].urlImage, height: 100,),
+                                  Text(livros[index].titulo, overflow: TextOverflow.visible, textAlign: TextAlign.center,),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       );
                     }),
               ),
-
-              Text('O QUE OS SEUS AMIGOS ESTÃO LENDO'),
+              const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text('O QUE O SEUS AMIGOS ESTÃO LENDO',
+                  style: TextStyle(fontWeight: FontWeight.bold),),
+              ),
               SizedBox(
-                height: 200,
+                height: 150,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: livros.length,
                     itemBuilder: (context, index){
-                      return Container(
-                        width: 100,
-                        height: 100,
-                        margin: EdgeInsets.all(10),
-                        child: Image.asset(livros[index].urlImage),
+                      return Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 160,
+                            width: 100,
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Image.asset(livros[index].urlImage, height: 100,),
+                                  Text(livros[index].titulo, overflow: TextOverflow.visible, textAlign: TextAlign.center,),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       );
                     }),
               ),
