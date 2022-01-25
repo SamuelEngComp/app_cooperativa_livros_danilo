@@ -6,6 +6,11 @@ import 'package:flutter/material.dart';
 class TelaGenerosFiltrados extends StatelessWidget {
 
   List<Livro> livros = LIVROS;
+  late String generoFiltrado;
+
+  TelaGenerosFiltrados(String nomeGeneroEscolhido){
+    this.generoFiltrado = nomeGeneroEscolhido;
+  }
 
 
   @override
@@ -29,10 +34,10 @@ class TelaGenerosFiltrados extends StatelessWidget {
         child: ListView(
           children: [
             Row(
-              children: const [
+              children: [
                 Padding(
                     padding: EdgeInsets.all(20),
-                child: Text('Ação'),),
+                child: Text(generoFiltrado),),
               ],
             ),
 

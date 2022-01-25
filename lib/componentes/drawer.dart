@@ -34,7 +34,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('AÇÃO'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('AÇÃO')));
             },
           ),
           ListTile(
@@ -42,7 +42,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('AVENTURA'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaLogin()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('AVENTURA')));
             },
           ),
           ListTile(
@@ -50,7 +50,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('CLÁSSICOS'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaLogin()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('CLÁSSICOS')));
             },
           ),
           ListTile(
@@ -58,7 +58,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('COMÉDIA'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaLogin()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('COMÉDIA')));
             },
           ),
           ListTile(
@@ -66,7 +66,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('CONTOS'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaLogin()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('CONTOS')));
             },
           ),
           ListTile(
@@ -74,7 +74,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('DRAMA'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaLogin()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('DRAMA')));
             },
           ),
           ListTile(
@@ -82,7 +82,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('ESPIRITUAL'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaLogin()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('ESPIRITUAL')));
             },
           ),
           ListTile(
@@ -90,7 +90,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('FANTASIA'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaLogin()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('FANTASIA')));
             },
           ),
           ListTile(
@@ -98,7 +98,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('FICÇÃO CINETÍFICA'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaLogin()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('FICÇÃO CINETÍFICA')));
             },
           ),
           ListTile(
@@ -106,7 +106,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('FICÇÃO HISTÓRICA'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaLogin()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('FICÇÃO HISTÓRICA')));
             },
           ),
           ListTile(
@@ -114,7 +114,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('HUMOR'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaLogin()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('HUMOR')));
             },
           ),
           ListTile(
@@ -122,7 +122,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('MISTÉRIO'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaLogin()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('MISTÉRIO')));
             },
           ),
           ListTile(
@@ -130,7 +130,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('NÃO FICÇÃO'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaLogin()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('NÃO FICÇÃO')));
             },
           ),
           ListTile(
@@ -138,7 +138,7 @@ class MenuLateral extends StatelessWidget {
             title: const Text('PARANORMAL'),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados()));
+                  MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('PARANORMAL')));
             },
           ),
           const Divider(
