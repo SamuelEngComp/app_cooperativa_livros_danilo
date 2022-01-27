@@ -15,9 +15,10 @@ class TelaHomeInicial extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.fromLTRB(20, 40, 20, 10),
                 child: Text('SUA BIBLIOTECA',
                   style: TextStyle(fontWeight: FontWeight.bold),),
               ),
@@ -48,7 +49,7 @@ class TelaHomeInicial extends StatelessWidget {
                     }),
               ),
               const Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                 child: Text('RECOMENDAÇÕES',
                   style: TextStyle(fontWeight: FontWeight.bold),),
               ),
@@ -80,7 +81,7 @@ class TelaHomeInicial extends StatelessWidget {
                     }),
               ),
               const Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                 child: Text('O QUE O SEUS AMIGOS ESTÃO LENDO',
                   style: TextStyle(fontWeight: FontWeight.bold),),
               ),

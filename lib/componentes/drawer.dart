@@ -10,7 +10,6 @@ class MenuLateral extends StatelessWidget {
     return Drawer(
 
       child: ListView(
-
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
@@ -26,12 +25,12 @@ class MenuLateral extends StatelessWidget {
                 ],
               ),
             ),
-
-
           ),
+
           ListTile(
             trailing: Icon(Icons.arrow_forward_rounded),
             title: const Text('AÇÃO'),
+            hoverColor: Color.fromRGBO(189,168,252, 1),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('AÇÃO')));
@@ -46,8 +45,10 @@ class MenuLateral extends StatelessWidget {
             },
           ),
           ListTile(
+            focusColor: Color.fromRGBO(189,168,252, 1),
             trailing: Icon(Icons.arrow_forward_rounded),
             title: const Text('CLÁSSICOS'),
+            textColor: Color.fromRGBO(189,168,252, .9),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('CLÁSSICOS')));

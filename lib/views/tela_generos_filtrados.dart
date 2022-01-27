@@ -24,7 +24,10 @@ class TelaGenerosFiltrados extends StatelessWidget {
           title:Image.asset('assets/imagens/iconeLivro.png'),
           centerTitle: true,
           actions: const [
-            Icon(Icons.search, color: Colors.white,),
+            Padding(
+              padding: EdgeInsets.fromLTRB(10, 10, 15, 10),
+              child: Icon(Icons.search, color: Colors.white,),
+            ),
           ],
           backgroundColor: const Color(0xFFD097FC),
         ),
