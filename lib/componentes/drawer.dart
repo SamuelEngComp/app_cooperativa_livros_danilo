@@ -41,24 +41,20 @@ class MenuLateral extends StatelessWidget {
             child: ListView(
               padding: EdgeInsets.zero,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color.fromRGBO(189,168,252, .4),
-                    border: Border.all(
-                      color: Colors.purple,//Color(0xFFD9ACF6)
-                    ),
-                  ),
-                  child: ListTile(
+
+                  ListTile(
+                    selectedTileColor: Color.fromRGBO(127,84,173, 1),
                     trailing: Icon(Icons.arrow_forward_rounded),
-                    title: const Text('AÇÃO'),
+                    title: const Text('AÇÃO', style: TextStyle(color: Color.fromRGBO(127,84,173, 1), fontWeight: FontWeight.bold),),
                     hoverColor: Color.fromRGBO(189,168,252, 1),
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('AÇÃO')));
                     },
                   ),
-                ),
+
                 ListTile(
+                  selectedTileColor: Color.fromRGBO(127,84,173, 1),
                   trailing: Icon(Icons.arrow_forward_rounded),
                   title: const Text('AVENTURA'),
                   onTap: () {

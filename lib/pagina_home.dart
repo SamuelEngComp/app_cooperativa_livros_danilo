@@ -10,6 +10,7 @@ import 'package:app_cooperativa_livros_danilo/views/tela_web.dart';
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
+import 'componentes/bottom_navigator.dart';
 import 'componentes/drawer.dart';
 
 
@@ -34,7 +35,7 @@ class _PaginaHomeState extends State<PaginaHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: selectedIndex != 1 ? AppBar(
         title:Image.asset('assets/imagens/iconeLivro.png'),
         centerTitle: true,
         actions: const [
@@ -44,18 +45,24 @@ class _PaginaHomeState extends State<PaginaHome> {
           ),
         ],
         backgroundColor: const Color(0xFFD097FC),
-      ),
+      ): null,
       body: paginas[selectedIndex],
       drawer: MenuLateral(),
       bottomNavigationBar: ConvexAppBar(
         style: TabStyle.react,
         items: [
-          TabItem(icon: const ImageIcon(AssetImage('assets/imagens/silhueta-negra-de-casa-sem-porta.png'), size: 25, color: Colors.black), title: (selectedIndex == 0) ?'Home':''),
-          TabItem(icon: const ImageIcon(AssetImage('assets/imagens/do-utilizador.png'), size: 25, color: Colors.black), title: (selectedIndex == 1) ? 'Perfil': ''),
-          TabItem(icon: const ImageIcon(AssetImage('assets/imagens/pilha-de-tres-livros.png'), size: 25, color: Colors.black), title: (selectedIndex == 2) ? 'Galeria': ''),
-          TabItem(icon: const ImageIcon(AssetImage('assets/imagens/earth-with-a-book.png'), size: 25, color: Colors.black), title: (selectedIndex == 3) ?'Web':''),
-          TabItem(icon: const ImageIcon(AssetImage('assets/imagens/chat-box.png'), size: 25, color: Colors.black), title: (selectedIndex == 4) ? 'Chat': ''),
-          TabItem(icon: const ImageIcon(AssetImage('assets/imagens/shopping-cart-with-product-inside.png'), size: 25, color: Colors.black), title: (selectedIndex == 5) ? 'Shop':''),
+          TabItem(icon: const ImageIcon(AssetImage('assets/imagens/silhueta-negra-de-casa-sem-porta.png'),
+              size: 25, color: Colors.black), title: (selectedIndex == 0) ?'Home':''),
+          TabItem(icon: const ImageIcon(AssetImage('assets/imagens/do-utilizador.png'),
+              size: 25, color: Colors.black), title: (selectedIndex == 1) ? 'Perfil': ''),
+          TabItem(icon: const ImageIcon(AssetImage('assets/imagens/pilha-de-tres-livros.png'),
+              size: 25, color: Colors.black), title: (selectedIndex == 2) ? 'Galeria': ''),
+          TabItem(icon: const ImageIcon(AssetImage('assets/imagens/earth-with-a-book.png'),
+              size: 25, color: Colors.black), title: (selectedIndex == 3) ?'Web':''),
+          TabItem(icon: const ImageIcon(AssetImage('assets/imagens/chat-box.png'),
+              size: 25, color: Colors.black), title: (selectedIndex == 4) ? 'Chat': ''),
+          TabItem(icon: const ImageIcon(AssetImage('assets/imagens/shopping-cart-with-product-inside.png'),
+              size: 25, color: Colors.black), title: (selectedIndex == 5) ? 'Shop':''),
         ],
         elevation: 5,
         top: -25,
