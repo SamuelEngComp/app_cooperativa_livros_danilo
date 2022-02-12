@@ -65,7 +65,7 @@ class _PaginaHomeState extends State<PaginaHome> {
               size: 25, color: Colors.black), title: (selectedIndex == 5) ? 'Shop':''),
         ],
         elevation: 5,
-        top: -25,
+        top: -20,
         curveSize: 70,
         backgroundColor: const Color(0xFFD097FC),
         initialActiveIndex: selectedIndex,

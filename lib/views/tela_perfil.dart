@@ -215,13 +215,52 @@ class _TelaPerfilState extends State<TelaPerfil> {
               child: Text('AVANÇOS DE LEITURA',
                 style: TextStyle(fontWeight: FontWeight.bold),),
             ),
-            SizedBox(
-              height: 150,
-              child: ListTile(
-                title: Text('Jogada Mortal'),
-              ),
 
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: largura/4,
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Color(0xFFD097FC),
+                      child: CircleAvatar(
+                        radius: 29,
+                        backgroundImage: AssetImage('assets/imagens/vegeta.jpeg'),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: largura/3,
+                    child: Column(
+                      children: const [
+                        Text('Jogada Mortal', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                        Text('Harlan Coben', style: TextStyle(fontSize: 10),),
+                        Text('20 páginas lidas de 200', style: TextStyle(fontSize: 12),),
+                        Text('10 páginas lidas ao dia', style: TextStyle(fontSize: 12),),
+                        SizedBox(height: 5,),
+                        Text('10 páginas lidas ao dia', style: TextStyle(fontSize: 12, backgroundColor: Color(0xFFD097FC)),),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: largura/6,
+                    child: TextButton(
+                      child: Text('LER', style: TextStyle(color: Colors.white,),),
+                      onPressed: (){},
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                        backgroundColor: Color(0xFFD097FC),
+                      ),
+
+                    ),
+                  ),
+                ],
+              ),
             ),
+
 
               ],
             ),
