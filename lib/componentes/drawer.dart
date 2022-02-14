@@ -45,7 +45,7 @@ class MenuLateral extends StatelessWidget {
                   ListTile(
                     selectedTileColor: Color.fromRGBO(127,84,173, 1),
                     trailing: Icon(Icons.arrow_forward_rounded),
-                    title: const Text('AÇÃO', style: TextStyle(color: Color.fromRGBO(127,84,173, 1), fontWeight: FontWeight.bold),),
+                    title: const Text('AÇÃO'),
                     hoverColor: Color.fromRGBO(189,168,252, 1),
                     onTap: () {
                       Navigator.push(context,
@@ -66,7 +66,6 @@ class MenuLateral extends StatelessWidget {
                   focusColor: Color.fromRGBO(189,168,252, 1),
                   trailing: Icon(Icons.arrow_forward_rounded),
                   title: Text('CLÁSSICOS'),
-                  textColor: Color.fromRGBO(189,168,252, .9),
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => TelaGenerosFiltrados('CLÁSSICOS')));

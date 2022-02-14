@@ -6,6 +6,8 @@ class TelaWeb extends StatelessWidget {
     double altura = MediaQuery.of(context).size.height;
     double largura = MediaQuery.of(context).size.width;
 
+    print('largura: $largura');
+
     bool selecionado = false;
 
     return Container(
@@ -71,7 +73,7 @@ class TelaWeb extends StatelessWidget {
                         ),
 
                         Positioned(
-                          left: 30,
+                          left: 25,
                           bottom: 0,
                           top: 25,
                           child: FilterChip(
@@ -160,105 +162,125 @@ class TelaWeb extends StatelessWidget {
             ],
           ),
 
-          ListView(
-                children: [
-                  SizedBox(height: 30,),
-                  ListTile(
-                    leading: CircleAvatar(
-                      radius: 27,
-                      backgroundColor: Color(0xFFD097FC),
-                      child: CircleAvatar(
-                        radius: 26,
-                        backgroundImage: AssetImage('assets/imagens/mano.jpeg'),
-                      ),
-                    ),
-                    title: Text('Lê Livros'),
-                  ),
-                  Stack(
-                    children: [
-                      Container(
-                        width: largura * .8,
-                        child: Image.asset('assets/imagens/mano.jpeg'),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50.0),
+          Expanded(
+            flex: 2,
+            child: ListView(
+                  children: [
+                    SizedBox(height: 30,),
+                    ListTile(
+                      leading: CircleAvatar(
+                        radius: 27,
+                        backgroundColor: Color(0xFFD097FC),
+                        child: CircleAvatar(
+                          radius: 26,
+                          backgroundImage: AssetImage('assets/imagens/mano.jpeg'),
                         ),
                       ),
-                    ],
-                  ),
+                      title: Text('Lê Livros'),
+                      trailing: Text('12 h'),
+                    ),
+                    Stack(
+                      children: [
+                        Center(
+                          child: Container(
+                            width: largura * .8,
+                            child: Image.asset('assets/imagens/mano.jpeg',),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                          ),
+                        ),
+                        // Positioned(
+                        //     child: ElevatedButton(
+                        //       child: Text('COMPRAR', style: TextStyle(color: Colors.white),),
+                        //       onPressed: (){},
+                        //     ),),
+                      ],
+                    ),
 
-                  SizedBox(height: 30,),
-                  ListTile(
-                    leading: CircleAvatar(
-                      radius: 27,
-                      backgroundColor: Color(0xFFD097FC),
-                      child: CircleAvatar(
-                        radius: 26,
-                        backgroundImage: AssetImage('assets/imagens/mano.jpeg'),
-                      ),
-                    ),
-                    title: Text('Lê Livros'),
-                  ),
-                  Stack(
-                    children: [
-                      Container(
-                        width: largura * .8,
-                        child: Image.asset('assets/imagens/mano.jpeg'),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50.0),
+                    SizedBox(height: 30,),
+                    ListTile(
+                      leading: CircleAvatar(
+                        radius: 27,
+                        backgroundColor: Color(0xFFD097FC),
+                        child: CircleAvatar(
+                          radius: 26,
+                          backgroundImage: AssetImage('assets/imagens/neymar.png'),
                         ),
                       ),
-                    ],
-                  ),
+                      title: Text('Arthur'),
+                      trailing: Text('12 h'),
+                    ),
+                    Stack(
+                      children: [
+                        Center(
+                          child: Container(
+                            width: largura * .8,
+                            child: Image.asset('assets/imagens/goku.jpg'),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
 
-                  SizedBox(height: 30,),
-                  ListTile(
-                    leading: CircleAvatar(
-                      radius: 27,
-                      backgroundColor: Color(0xFFD097FC),
-                      child: CircleAvatar(
-                        radius: 26,
-                        backgroundImage: AssetImage('assets/imagens/mano.jpeg'),
-                      ),
-                    ),
-                    title: Text('Lê Livros'),
-                  ),
-                  Stack(
-                    children: [
-                      Container(
-                        width: largura * .8,
-                        child: Image.asset('assets/imagens/mano.jpeg'),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50.0),
+                    SizedBox(height: 30,),
+                    ListTile(
+                      leading: CircleAvatar(
+                        radius: 27,
+                        backgroundColor: Color(0xFFD097FC),
+                        child: CircleAvatar(
+                          radius: 26,
+                          backgroundImage: AssetImage('assets/imagens/mano.jpeg'),
                         ),
                       ),
-                    ],
-                  ),
+                      title: Text('Lê Livros'),
+                      trailing: Text('12 h'),
+                    ),
+                    Stack(
+                      children: [
+                        Center(
+                          child: Container(
+                            width: largura * .8,
+                            child: Image.asset('assets/imagens/mano.jpeg'),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
 
-                  SizedBox(height: 30,),
-                  ListTile(
-                    leading: CircleAvatar(
-                      radius: 27,
-                      backgroundColor: Color(0xFFD097FC),
-                      child: CircleAvatar(
-                        radius: 26,
-                        backgroundImage: AssetImage('assets/imagens/mano.jpeg'),
-                      ),
-                    ),
-                    title: Text('Lê Livros'),
-                  ),
-                  Stack(
-                    children: [
-                      Container(
-                        width: largura * .8,
-                        child: Image.asset('assets/imagens/mano.jpeg'),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50.0),
+                    SizedBox(height: 30,),
+                    ListTile(
+                      leading: CircleAvatar(
+                        radius: 27,
+                        backgroundColor: Color(0xFFD097FC),
+                        child: CircleAvatar(
+                          radius: 26,
+                          backgroundImage: AssetImage('assets/imagens/mano.jpeg'),
                         ),
                       ),
-                    ],
-                  ),
-                ],
-              ),
+                      title: Text('Lê Livros'),
+                      trailing: Text('12 h'),
+                    ),
+                    Stack(
+                      children: [
+                        Center(
+                          child: Container(
+                            width: largura * .8,
+                            child: Image.asset('assets/imagens/mano.jpeg'),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+          ),
         ],
       ),
     );
